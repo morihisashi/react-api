@@ -13,14 +13,16 @@ const ApiFetch = () => {
             setGetApi(data['daily']);
             // console.log(data['daily']);
         })();
+        setMaxTemperature(getApi['temperature_2m_max']);
     }, []);
-    // setMaxTemperature(getApi);
-    console.log(getApi['temperature_2m_max']);
+    
+    // console.log(getApi['temperature_2m_max']);
 
     return (
         <div>
             <ul>
-                {maxTemperature.map((data, id) => <li key={id}>{data}</li>)}
+                {/* {maxTemperature.map((data, id) => <li key={id}>{data}</li>)} */}
+                {maxTemperature}
             </ul>
         </div>
     )
