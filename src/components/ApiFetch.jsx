@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './ApiFetch.css';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import CloudIcon from '@mui/icons-material/Cloud';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 const ApiFetch = () => {
     const [getApi, setGetApi] = useState([]);
@@ -25,14 +28,14 @@ const ApiFetch = () => {
     }
 
     return (
-        <div>
+        <div className='api'>
             <h1>天気情報</h1>
             <button onClick={() => temInfo()}>東京の情報を見る</button>
             <table className='weather'>
                 <thead>
                     {(times) && (
                         <tr>
-                            日にち
+                            <th>日にち</th>
                             {Object.values(times).map((data, id) => <th key={id}>{data}</th>)}
                         </tr>
                     )}
@@ -40,20 +43,27 @@ const ApiFetch = () => {
                 <tbody>
                     {(maxTemperature) && (
                         <tr>
-                            最高気温
+                            <th>最高気温</th>
                             {Object.values(maxTemperature).map((data, id) => <th key={id}>{data}度</th>)}
                         </tr>
                     )}
                     {(minTemperature) && (
                         <tr>
-                            最低気温
+                            <th>最低気温</th>
                             {Object.values(minTemperature).map((data, id) => <th key={id}>{data}度</th>)}
                         </tr>
                     )}
                     {(precipitation) && (
                         <tr>
-                            降水確率
+                            <th>降水確率</th>
                             {Object.values(precipitation).map((data, id) => <th key={id}>{data}%</th>)}
+                        </tr>
+                    )}
+                    {(precipitation) && (
+                        <tr>
+                            <th>天気</th>
+                            {Object.values(precipitation).map((data, id) =>
+                                <th key={id}>{(data <= 30) && <WbSunnyIcon />}{(data <= 70) ? <CloudIcon /> : <BeachAccessIcon />}</th>)}
                         </tr>
                     )}
                 </tbody>
