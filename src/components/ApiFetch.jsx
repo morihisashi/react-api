@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import './ApiFetch.css';
 
 const ApiFetch = () => {
     const [getApi, setGetApi] = useState([]);
@@ -24,9 +25,24 @@ const ApiFetch = () => {
         <div>
             <h1>天気情報</h1>
             <button onClick={() => temInfo()}>東京の情報を見る</button>
-            <ul>
-                {(maxTemperature) && (Object.values(maxTemperature).map((data, id) => <li key={id}>{data}</li>))}
-            </ul>
+            <table className='weather'>
+                <thead>
+                    <tr>
+                        日にち
+                        {(times) && (Object.values(times).map((data, id) => <th key={id}>{data}</th>))}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        最高気温
+                        {(maxTemperature) && (Object.values(maxTemperature).map((data, id) => <th key={id}>{data}度</th>))}
+                    </tr>
+                    <tr>
+                        最低気温
+                        {(minTemperature) && (Object.values(minTemperature).map((data, id) => <th key={id}>{data}度</th>))}
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }
