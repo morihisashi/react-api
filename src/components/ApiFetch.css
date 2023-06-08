@@ -1,3 +1,21 @@
 .weather {
     margin: 10px auto;
 }
+
+table {
+    border: thin solid;
+    border-collapse: collapse;
+}
+
+tr {
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+    border: thin solid;
+}
+
+th {
+    padding: 0 20px;
+    border-collapse: collapse;
+    border: thin solid;
+}
