@@ -44,26 +44,26 @@ const ApiFetch = () => {
                     {(maxTemperature) && (
                         <tr>
                             <th>最高気温</th>
-                            {Object.values(maxTemperature).map((data, id) => <th key={id}>{data}度</th>)}
+                            {Object.values(maxTemperature).map((data, id) => <td key={id}>{data}度</td>)}
                         </tr>
                     )}
                     {(minTemperature) && (
                         <tr>
                             <th>最低気温</th>
-                            {Object.values(minTemperature).map((data, id) => <th key={id}>{data}度</th>)}
+                            {Object.values(minTemperature).map((data, id) => <td key={id}>{data}度</td>)}
                         </tr>
                     )}
                     {(precipitation) && (
                         <tr>
                             <th>降水確率</th>
-                            {Object.values(precipitation).map((data, id) => <th key={id}>{data}%</th>)}
+                            {Object.values(precipitation).map((data, id) => <td key={id}>{data}%</td>)}
                         </tr>
                     )}
                     {(precipitation) && (
                         <tr>
                             <th>天気</th>
                             {Object.values(precipitation).map((data, id) =>
-                                <th key={id}>{(data <= 30) && <WbSunnyIcon />}{(data <= 70) ? <CloudIcon /> : <BeachAccessIcon />}</th>)}
+                                <td key={id}>{(data <= 30) ? <WbSunnyIcon /> : (data <= 70) ? <CloudIcon /> : <BeachAccessIcon />}</td>)}
                         </tr>
                     )}
                 </tbody>
