@@ -46,5 +46,13 @@ th {
 td {
     padding: 10px 20px;
     border-collapse: collapse;
-    border: thin solid;
+    border: thin solid black;
+}
+
+.max {
+    color: red;
+}
+
+.min {
+    color: blue;
 }
