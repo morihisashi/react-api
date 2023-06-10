@@ -21,7 +21,6 @@ const ApiFetch = () => {
     const temInfo = async () => {
         const res = await fetch(
             'https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&hourly=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,rain_sum,precipitation_hours,precipitation_probability_max&timezone=Asia%2FTokyo'
-            // 'https://api.open-meteo.com/v1/forecast?latitude=35.69&longitude=139.69&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min'
         );
         const data = await res.json();
         setGetApi(data['daily']);
