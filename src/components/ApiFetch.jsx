@@ -5,10 +5,15 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 const ApiFetch = () => {
+    // APIの情報を格納
     const [getApi, setGetApi] = useState([]);
+    // 最高気温の情報を格納
     const [maxTemperature, setMaxTemperature] = useState([]);
+    // 最低気温の情報を格納
     const [minTemperature, setMinTemperature] = useState([]);
+    // 日にちの情報を格納
     const [times, setTimes] = useState([]);
+    // 降水確率の情報を格納
     const [precipitation, setPrecipitation] = useState([]);
 
     useEffect(() => {
