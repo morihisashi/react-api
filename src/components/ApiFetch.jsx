@@ -16,6 +16,7 @@ const ApiFetch = () => {
     // 降水確率の情報を格納
     const [precipitation, setPrecipitation] = useState([]);
 
+    // 各情報を格納
     useEffect(() => {
         setMaxTemperature(getApi['temperature_2m_max']);
         setMinTemperature(getApi['temperature_2m_min']);
